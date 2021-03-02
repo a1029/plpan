@@ -1,30 +1,18 @@
 package com.example.plpan.entity;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Getter
-public class Board extends BaseEntity{
+public class Reply extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long bno;
+    private Long rno;
 
-    private String title;
+    private String replyer;
 
     private String content;
-
-    private String writer;
 }
