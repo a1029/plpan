@@ -1,11 +1,15 @@
 package com.example.plpan.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.*;
+
+import javax.persistence.*;
 
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@ToString
 public class Reply extends BaseEntity{
 
     @Id
@@ -15,4 +19,8 @@ public class Reply extends BaseEntity{
     private String replyer;
 
     private String content;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Board board;
+
 }

@@ -1,10 +1,7 @@
 package com.example.plpan.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +13,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Builder
 @Getter
+@ToString
 public class Board extends BaseEntity{
 
     @Id
@@ -27,4 +25,14 @@ public class Board extends BaseEntity{
     private String content;
 
     private String writer;
+
+    public void changeTitle(String title){
+
+        this.title = title;
+    }
+
+    public void changeContent(String content){
+
+        this.content = content;
+    }
 }

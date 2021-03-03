@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{/layout/index :: setContent(~{this::content})}">
+
+    <th:block th:fragment="content">
+        <div class="blog">
+            <div class="row">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>날짜</th>
+                        <th>추천</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr th:each="dto : ${result.dtoList}">
+                        <td>[[${dto.bno}]]</td>
+                        <td>[[${dto.title}]] <small>[[${dto.replyCnt}]]</small></td>
+                        <td>[[${dto.writer}]]</td>
+                        <td>[[${dto.regDate}]]</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </th:block>
+</th:block>
+</html>
